@@ -3,9 +3,9 @@ pipeline
     agent any
     stages
     {
-        stage('scm checkout')
+        stages('scm checkout')
         {
-            stpes {git branch: 'master', url: 'https://github.com/bhagyashripawar27/mavenproject'}
+            steps {git branch: 'master', url: 'https://github.com/bhagyashripawar27/mavenproject'}
         }
 
 
