@@ -7,5 +7,14 @@ pipeline
         {
             steps{git branch: 'master', url: 'https://github.com/bhagyashripawar27/mavenproject'    }
         }
+        stage('code compile')
+        {
+            steps{withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven', mavenSettingsConfig: '', traceability: true) 
+            {
+                sh'mvn compile'
+                
+            }    
+                }
+        }
     }
 }
