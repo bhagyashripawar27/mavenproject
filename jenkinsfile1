@@ -16,5 +16,13 @@ pipeline
             }    
                 }
         }
+        stage('test unit test framework')
+        {
+            steps
+            {withMaven(globalMavenSettingsConfig: '', jdk: 'Jdk_Home', maven: 'maven', mavenSettingsConfig: '', traceability: true) 
+            {sh'mvn test'}
+
+            }
+        }
     }
 }
